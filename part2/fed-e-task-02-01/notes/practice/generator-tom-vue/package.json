@@ -1,0 +1,10 @@
+{
+  "name": "generator-tom-vue",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "cjk",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^5.4.0"
+  }
+}

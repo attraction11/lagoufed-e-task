@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function p1() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('p1')
+                }, 1000)
+            })
+        }
+
+        function p2() {
+            return new Promise((resolve, reject) => {
+                resolve('p2')
+            })
+        }
+
+        Promise.all(['a', 'b', p1(), p2(), 'c']).then(result => console.log(result)) // ["a", "b", "p1", "p2", "c"]
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*css-loader 同样支持 sass/less 风格的 @import 指令*/
+/*@import 'reset.css';*/
+
+body {
+  min-height: 100vh;
+  background: #f4f8fb;
+  background-image: url(7ab8f6bdf1a3577794e20a1876d69a4c.png);
+  background-size: cover;
+}
+.heading {
+    padding: 20px;
+    background: #ccc;
+    color: #fff;
+  }
+.editor {
+  position: relative;
+  padding: 10px;
+  outline: 0;
+  min-height: inherit;
+  z-index: 1;
+  color: #495057;
+  line-height: 1.8;
+}
+

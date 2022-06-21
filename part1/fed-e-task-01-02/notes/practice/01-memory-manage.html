@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内存为什么需要管理？</title>
+</head>
+
+<body>
+    <button id="btn">add</button>
+    <script>
+        function fn() {
+            arrList = []
+            arrList[1000000] = 'It is too long'
+        }
+        document.getElementById('btn').addEventListener('click', fn)
+    </script>
+</body>
+
+</html>

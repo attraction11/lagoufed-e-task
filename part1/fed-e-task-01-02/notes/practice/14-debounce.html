@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖函数实现</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <script>
+        var oBtn = document.getElementById('btn')
+
+        // handle 最终需要执行的事件监听
+        // wait 事件触发之后多久开始执行
+        // imediate 控制执行第一次还是最后一次， false 执行最后一次
+        function myDebounce(handle, wait, immediate) {
+            // 1、参数类型判断以及默认值处理      
+            if (typeof handle !== 'function') throw new Error('handle must be an function')
+            if (typeof wait === 'undefined') wait = 300
+            if (typeof wait === 'boolean') {
+                immediate = wait
+                wait = 300
+            }
+            if (typeof immediate !== 'boolean') immediate = false
+            // 所谓的防抖效果，我们想要实现的是有一个'人'可以管理handle的执行次数
+            // 如果想要执行最后一次，那就意味着无论当前我们点击了多少次，前面的N-1次都无用
+            let timer = null
+            return function proxy(...args) {
+                let self = this,
+                    init = immediate && !timer
+                // 当前点击清除上一次的定时器，疯狂点击间隔小于waits时，只有最后一次执行
+                clearTimeout(timer)
+                timer = setTimeout(() => {
+                    // 每次定时器回调函数执行，置空timer,为下次有效点击做准备
+                    timer = null
+                    !immediate ? handle.call(self, ...args) : null
+                }, wait)
+
+                // 如果当前传递进来的immediate是true，则立即执行handle
+                init ? handle.call(self, ...args) : null
+            }
+        }
+
+        // 定义事件的执行函数 
+        function btnClick(ev) {
+            console.log('点击了', this, ev)
+        }
+        oBtn.onclick = myDebounce(btnClick, 200, true)
+        // 考虑以前的点击事件中含有当前点击对象event以及this
+        // oBtn.onclick = myDebounce(event)
+    </script>
+</body>
+
+</html>

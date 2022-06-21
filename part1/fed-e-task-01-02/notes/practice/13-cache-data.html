@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缓存数据</title>
+</head>
+
+<body>
+    <div id="skip" class="skip"></div>
+    <script>
+        // 缓存数据：对于需要多次使用的数据进行提前保存，后续进行使用
+        var oBox = document.getElementById('skip')
+        // function hasClassName(ele, cls) {
+        //     // 假设在当前的函数体中需要对className的值进行多次使用，那么我们就可以将它提前缓存起来
+        //     console.log(ele.className)
+        //     return ele.className == cls
+        // }
+
+        function hasClassName(ele, cls) {
+            var clsName = ele.className
+            console.log(clsName)
+            return clsName == cls
+        }
+        console.log(hasClassName(oBox, 'skip'))
+
+        // 1、减少声明和语句数
+        // 2、缓存数据（作用域链查找变快）
+    </script>
+</body>
+
+</html>

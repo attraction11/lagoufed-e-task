@@ -1,0 +1,13 @@
+{
+    "name": "sjk-cli",
+    "version": "1.0.0",
+    "description": "scaffold",
+    "main": "index.js",
+    "author": "cjk",
+    "bin": "bin/cli.js",
+    "license": "MIT",
+    "dependencies": {
+        "ejs": "^3.1.6",
+        "inquirer": "^8.1.2"
+    }
+}

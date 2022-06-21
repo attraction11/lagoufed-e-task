@@ -1,0 +1,16 @@
+{
+    "name": "06-parcel-use",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "parcel src/*.html",
+        "build": "parcel build src/*.html"
+    },
+    "devDependencies": {
+        "parcel-bundler": "^1.12.4"
+    },
+    "dependencies": {
+        "jquery": "^3.4.1"
+    }
+}

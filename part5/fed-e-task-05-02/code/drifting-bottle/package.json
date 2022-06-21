@@ -1,0 +1,17 @@
+{
+  "name": "drifting-bottle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "node-uuid": "^1.4.8",
+    "redis": "^4.0.1"
+  }
+}
