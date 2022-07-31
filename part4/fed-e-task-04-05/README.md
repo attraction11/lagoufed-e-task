@@ -95,4 +95,4 @@ redux 中通常使用中间件来进行异步处理，常用的中间件包括 r
 
 redux-thunk 使用高阶函数实现， 判别 action 的类型，如果 action 是函数，就调用这个函数，书写较为简单 。
 
-![alt text](ReduxAsyncDataFlowDiagram.gif)
+![alt text](./ReduxAsyncDataFlowDiagram.gif)
